@@ -1,6 +1,6 @@
 package LearningSpringBoot.backstone.animals;
 
-public class Tiger {
+public class Tiger implements GamingConsole {
     public void see(){
         System.out.println("See the tiger's teeth");
     }

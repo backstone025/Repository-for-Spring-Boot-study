@@ -1,9 +1,9 @@
 package LearningSpringBoot.backstone.animals;
 
 public class GameController {
-    private Elephant animal;
+    private GamingConsole animal;
 
-    public GameController(Elephant animal) {
+    public GameController(GamingConsole animal) {
         this.animal = animal;
     }
 

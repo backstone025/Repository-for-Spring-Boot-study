@@ -1,6 +1,6 @@
 package LearningSpringBoot.backstone.animals;
 
-public class Elephant {
+public class Elephant implements GamingConsole{
     public void see(){
         System.out.println("See the elephant's trunk");
     }
