@@ -16,5 +16,9 @@ public class App02_HelloWorldSpring {
 
         // 3. Spring에 의해 관리되는 Beans을 끌어내기
         System.out.println(context.getBean("name"));
+
+        System.out.println(context.getBean("age"));
+
+        System.out.println(context.getBean("person"));
     }
 }
