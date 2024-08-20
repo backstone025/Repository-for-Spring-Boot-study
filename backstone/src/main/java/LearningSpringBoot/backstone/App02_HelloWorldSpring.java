@@ -4,6 +4,8 @@ import org.springframework.boot.autoconfigure.web.reactive.HttpHandlerAutoConfig
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import java.lang.annotation.Annotation;
+import java.lang.reflect.Array;
+import java.util.Arrays;
 
 public class App02_HelloWorldSpring {
     public static void main(String arg[]){
@@ -38,6 +40,13 @@ public class App02_HelloWorldSpring {
         System.out.println(context.getBean("person3Parameters"));
 
         // 문제점 : Bean의 유셩을 매개변수로 사용하여 호출할 시, 만일 같은 유형의 Beans이 여러개 있으면, 여러 개의 Bean이 발견되었다는 예회를 출력한다.
+        // 해결 : 1. Beam 후보들 중 하나를 기본으로 설정한다. 2. 한정자를 이용한다.
         System.out.println(context.getBean(Person.class));
+        System.out.println(context.getBean("clone2"));
+
+        // Spring이 관리하는 모든 Beans의 이름들을 나열하기
+        Arrays.stream(context.getBeanDefinitionNames()).forEach(System.out::println);
+
+        System.out.println(context.getBeanDefinitionCount());
     }
 }
