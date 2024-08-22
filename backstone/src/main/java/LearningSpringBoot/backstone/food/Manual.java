@@ -1,5 +1,8 @@
 package LearningSpringBoot.backstone.food;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Manual {
     private servingFood manual;
 
