@@ -8,13 +8,34 @@ import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
 
-// field dependency injection
+// setter-based dependency injection
 @Component
 class YouBusinessClass{
-    @Autowired
+
     dependency1 dependency1;
-    @Autowired
+
     dependency2 dependency2;
+
+    @Autowired
+    public void setDependency1(LearningSpringBoot.backstone.dependency1 dependency1) {
+        System.out.println("Setter Injection - dependency1");
+        this.dependency1 = dependency1;
+    }
+
+    @Autowired
+    public void setDependency2(LearningSpringBoot.backstone.dependency2 dependency2) {
+        System.out.println("Setter Injection - dependency2");
+        this.dependency2 = dependency2;
+    }
+
+    public LearningSpringBoot.backstone.dependency1 getDependency1() {
+        return dependency1;
+    }
+
+    public LearningSpringBoot.backstone.dependency2 getDependency2() {
+        return dependency2;
+    }
+
     public String toString(){
         StringBuffer sb = new StringBuffer();
         sb.append("Using").append(dependency1).append("and").append(dependency2);
