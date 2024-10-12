@@ -1,10 +1,10 @@
 package LearningSpringBoot.backstone;
 
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Lazy;
+import org.springframework.beans.factory.config.ConfigurableBeanFactory;
+import org.springframework.context.annotation.*;
 import org.springframework.stereotype.Component;
+
+import java.util.Arrays;
 import java.util.Scanner;
 
 @Component
@@ -12,18 +12,9 @@ class ClassA{
 }
 
 @Component
-@Lazy
+@Scope(value = ConfigurableBeanFactory.SCOPE_PROTOTYPE)
 class ClassB{
-    ClassA A;
 
-    public ClassB(ClassA A) {
-        System.out.println("some Initialization logic");
-        this.A = A;
-    }
-
-    public void doSomething(){
-        System.out.println("class B do somthing");
-    }
 }
 
 @Configuration
@@ -31,10 +22,13 @@ class ClassB{
 public class App05_LazyInitializationExample {
     public static void main(String[] arg) {
         try(var context = new AnnotationConfigApplicationContext(App05_LazyInitializationExample.class)){
-            Scanner sc = new Scanner(System.in);
-            sc.nextLine();
+            System.out.println(context.getBean(ClassB.class));
+            System.out.println(context.getBean(ClassB.class));
+            System.out.println(context.getBean(ClassB.class));
 
-            context.getBean(ClassB.class).doSomething();
+            System.out.println(context.getBean(ClassA.class));
+            System.out.println(context.getBean(ClassA.class));
+            System.out.println(context.getBean(ClassA.class));
         }
     }
 }
