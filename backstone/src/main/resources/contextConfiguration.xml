@@ -13,6 +13,14 @@
     <bean id="age" class="java.lang.Integer">
         <constructor-arg value="23"/>
     </bean> 
-    <!-- Component scan 구현 -->
-    <context:component-scan base-package="LearningSpringBoot.backstone.animals"/>
+    <!-- Spring이 Bean 관리하도록 설정하기 -->
+    <bean id="elephant" class="LearningSpringBoot.backstone.animals.Elephant"/>
+
+    <bean id="game_controller" class="LearningSpringBoot.backstone.animals.GameController">
+        <constructor-arg ref="elephant"/>
+    </bean>
+
+    <bean id="play_zoo_game" class="LearningSpringBoot.backstone.App01_PlayZooGame">
+        <constructor-arg ref="game_controller"/>
+    </bean>
 </beans>

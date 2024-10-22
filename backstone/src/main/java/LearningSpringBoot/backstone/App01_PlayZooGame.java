@@ -1,17 +1,14 @@
 package LearningSpringBoot.backstone;
 
-import LearningSpringBoot.backstone.animals.Elephant;
-import LearningSpringBoot.backstone.animals.GameController;
-import LearningSpringBoot.backstone.animals.Monkey;
-import LearningSpringBoot.backstone.animals.Tiger;
+import LearningSpringBoot.backstone.animals.*;
 
 public class App01_PlayZooGame {
-    public static void main(String arg[]){
-        var elephant = new Elephant();
-        var monkey = new Monkey();
-        var tiger = new Tiger();
+    private GameController gameController;
+    public App01_PlayZooGame(GameController gameController) {
+        this.gameController = gameController;
+    }
 
-        var gameController = new GameController(tiger);
+    public void controller(GamingConsole animal){
         gameController.run();
     }
 }
