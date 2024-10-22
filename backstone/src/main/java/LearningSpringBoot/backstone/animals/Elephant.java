@@ -1,6 +1,10 @@
 package LearningSpringBoot.backstone.animals;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Elephant implements GamingConsole{
+    
     public void see(){
         System.out.println("See the elephant's trunk");
     }

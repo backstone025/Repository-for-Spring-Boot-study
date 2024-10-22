@@ -1,5 +1,9 @@
 package LearningSpringBoot.backstone.animals;
 
+import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Component;
+
+
 public class GameController {
     private GamingConsole animal;
 
@@ -7,6 +11,7 @@ public class GameController {
         this.animal = animal;
     }
 
+    @Bean
     public void run() {
         System.out.println("meeting animal : " + animal);
         animal.see();
