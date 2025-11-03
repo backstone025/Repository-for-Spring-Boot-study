@@ -1,0 +1,8 @@
+// this file is to note sql cmds
+
+insert into course (id, name, author)
+values (1, 'learn AWS', 'backstone')
+
+select * from course
+
+delete from course where id = 1;
