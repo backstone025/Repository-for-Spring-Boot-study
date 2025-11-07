@@ -1,10 +1,10 @@
-package com.backstone.springboot.learn_java_and_hibernate;
+package com.backstone.springboot.myfirstwebapp;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class LearnJavaAndHibernateApplicationTests {
+class MyfirstwebappApplicationTests {
 
 	@Test
 	void contextLoads() {
