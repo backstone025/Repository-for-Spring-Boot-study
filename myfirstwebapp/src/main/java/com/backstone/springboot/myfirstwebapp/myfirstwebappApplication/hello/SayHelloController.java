@@ -17,4 +17,15 @@ public class SayHelloController {
     public String sayHello(){
         return "Hello! What are you learning today?";
     }
+
+
+    // "say-hello-jsp" => sayHello.jsp
+
+    // sayHello.jsp
+    // /src/main/resources/META-INF/resources.WEB-INF.jsp/sayHello.jsp
+    //http://localhost:8080/say-hello-jsp
+    @RequestMapping("say-hello-jsp")
+    public String sayHelloJsp(){
+        return "sayHello";
+    }
 }
