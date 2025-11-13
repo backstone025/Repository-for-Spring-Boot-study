@@ -17,7 +17,7 @@ public class TodoController {
     private TodoService todoService;
 
     @RequestMapping("list-todos")
-    public String listAllTodos(ModelMap model) {
+    public String listAllTodos(ModelMap model){
         List<Todo> todos = todoService.findByUsername("backstone");
         model.addAttribute("todos", todos);
 
