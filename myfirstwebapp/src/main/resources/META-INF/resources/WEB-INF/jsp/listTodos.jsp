@@ -6,6 +6,18 @@
     <title>List Todos Page</title>
 </head>
 <body>
+<nav class="navbar navbar-expand-md navbar-light bg-light mb-3 p-1">
+    <a class="navbar-brand m-1" href="https://github.com/backstone025/Repository-for-Spring-Boot-study">backstone</a>
+    <div class="collapse navbar-collapse">
+        <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link" href="/home">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="/list-todos">Todos</a></li>
+        </ul>
+    </div>
+    <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="/login">Logout</a></li>
+    </ul>
+</nav>
 <div class="container">
     <h1>Your Todos</h1>
     <table class="table">
