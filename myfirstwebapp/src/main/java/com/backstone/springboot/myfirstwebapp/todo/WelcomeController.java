@@ -1,4 +1,4 @@
-package com.backstone.springboot.myfirstwebapp.login;
+package com.backstone.springboot.myfirstwebapp.todo;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
