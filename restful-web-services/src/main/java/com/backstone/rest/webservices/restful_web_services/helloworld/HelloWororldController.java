@@ -1,11 +1,15 @@
 package com.backstone.rest.webservices.restful_web_services.helloworld;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import com.backstone.rest.webservices.restful_web_services.user.User;
+import com.backstone.rest.webservices.restful_web_services.user.UserDaoService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class HelloWororldController {
+
+    @Autowired
+    private UserDaoService service;
 
     @GetMapping(path = "/hello-world")
     public String helloWorld() {
