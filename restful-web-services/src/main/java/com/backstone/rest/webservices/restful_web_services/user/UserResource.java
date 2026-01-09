@@ -2,7 +2,9 @@ package com.backstone.rest.webservices.restful_web_services.user;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import java.net.URI;
 import java.util.List;
 
 @RestController
@@ -29,8 +31,12 @@ public class UserResource {
     // POST /users
     @PostMapping("/users")
     public ResponseEntity<User> craateUser(@RequestBody User user){
-        service.save(user);
+        User savedUser = service.save(user);
+        URI location = ServletUriComponentsBuilder.fromCurrentRequest()
+                .path("/{id}")
+                .buildAndExpand(savedUser.getId())
+                .toUri();
 
-        return ResponseEntity.created(null).build();
+        return ResponseEntity.created(location).build();
     }
 }
