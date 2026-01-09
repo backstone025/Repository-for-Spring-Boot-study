@@ -34,6 +34,12 @@ public class UserResource {
         return user;
     }
 
+    // DELETE /users
+    @DeleteMapping("/users/{id}")
+    public void deleteUser(@PathVariable long id){
+        service.deleteById(id);
+    }
+
     // POST /users
     @PostMapping("/users")
     public ResponseEntity<User> craateUser(@RequestBody User user){
